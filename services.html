@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Services - LuxeHome Decor & Styling offers complete home styling, modern luxury decor, and custom interior design solutions.">
+    <title>Services - LuxeHome Decor & Styling</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            border: 2px solid #e5e5e5;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #0d9488, #06b6d4);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #2dd4bf;
+            box-shadow: 0 25px 50px rgba(13, 148, 136, 0.2);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .service-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #171717;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #525252;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.75rem 0;
+            color: #404040;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            color: #0d9488;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .process-section {
+            background: linear-gradient(135deg, #f0fdfa, white);
+            padding: 4rem 2rem;
+            border-radius: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ccfbf1;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .step-icon {
+            font-size: 3.5rem;
+            margin: 2rem auto 1.5rem;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #0d9488, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #171717;
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            color: #525252;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" stroke="url(#logoGradient)" stroke-width="2.5" fill="none" opacity="0.4"/>
+                    <path d="M24 12L32 18V30H16V18L24 12Z" fill="url(#logoGradient)"/>
+                    <rect x="21" y="24" width="6" height="6" fill="white" rx="1"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0d9488"/>
+                            <stop offset="50%" stop-color="#14b8a6"/>
+                            <stop offset="100%" stop-color="#2dd4bf"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-name">LuxeHome</span>
+                    <span class="logo-tagline">DECOR & STYLING</span>
+                </div>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <h1>Our <span class="gradient-text">Premium</span> Services</h1>
+        <p class="page-subtitle">Comprehensive interior design solutions tailored to transform your space into a masterpiece</p>
+    </div>
+
+    <!-- Services Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <span class="service-icon">🏠</span>
+                    <h3>Complete Home Styling</h3>
+                    <p>Transform your entire home with our comprehensive interior design service. From concept to completion, we handle every detail.</p>
+                    <ul class="service-features">
+                        <li>Full home assessment</li>
+                        <li>Space planning & layout</li>
+                        <li>Color scheme design</li>
+                        <li>Furniture & accessories</li>
+                        <li>Professional installation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <span class="service-icon">✨</span>
+                    <h3>Modern & Luxury Decor</h3>
+                    <p>Elevate your space with contemporary designer pieces and premium materials that exude sophistication.</p>
+                    <ul class="service-features">
+                        <li>Designer furniture selection</li>
+                        <li>Premium materials</li>
+                        <li>Statement pieces</li>
+                        <li>Luxury accessories</li>
+                        <li>Custom accents</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Space Planning & Color</h3>
+                    <p>Expert guidance on space optimization and color psychology to create harmonious, functional environments.</p>
+                    <ul class="service-features">
+                        <li>Layout optimization</li>
+                        <li>Color consultation</li>
+                        <li>Lighting analysis</li>
+                        <li>Traffic flow planning</li>
+                        <li>Functional design</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <span class="service-icon">🛋️</span>
+                    <h3>Furniture Selection</h3>
+                    <p>Curated furniture pieces that perfectly balance style, comfort, and functionality for your lifestyle.</p>
+                    <ul class="service-features">
+                        <li>Custom sourcing</li>
+                        <li>Scale assessment</li>
+                        <li>Style matching</li>
+                        <li>Quality assurance</li>
+                        <li>Delivery coordination</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <span class="service-icon">💡</span>
+                    <h3>Lighting Design</h3>
+                    <p>Strategic lighting solutions that enhance ambiance and highlight your space's best features.</p>
+                    <ul class="service-features">
+                        <li>Layered lighting plans</li>
+                        <li>Fixture selection</li>
+                        <li>Smart lighting systems</li>
+                        <li>Mood enhancement</li>
+                        <li>Energy efficiency</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <span class="service-icon">🖼️</span>
+                    <h3>Wall Art & Texture</h3>
+                    <p>Curated artwork and wall treatments that add personality and depth to your interiors.</p>
+                    <ul class="service-features">
+                        <li>Art curation</li>
+                        <li>Gallery walls</li>
+                        <li>Texture application</li>
+                        <li>Accent walls</li>
+                        <li>Custom framing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <span class="service-icon">🛏️</span>
+                    <h3>Bedroom Styling</h3>
+                    <p>Create your personal sanctuary with luxurious bedding, furniture, and decor that promotes relaxation.</p>
+                    <ul class="service-features">
+                        <li>Bed selection</li>
+                        <li>Luxury bedding</li>
+                        <li>Storage solutions</li>
+                        <li>Ambiance creation</li>
+                        <li>Personal touches</li>
+                    </ul>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <span class="service-icon">🍽️</span>
+                    <h3>Kitchen & Dining</h3>
+                    <p>Transform your cooking and dining spaces into beautiful, functional areas perfect for gathering.</p>
+                    <ul class="service-features">
+                        <li>Cabinet styling</li>
+                        <li>Backsplash design</li>
+                        <li>Dining furniture</li>
+                        <li>Accessory selection</li>
+                        <li>Organization systems</li>
+                    </ul>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="service-card">
+                    <span class="service-icon">📦</span>
+                    <h3>Custom Furniture</h3>
+                    <p>Bespoke furniture pieces crafted to your exact specifications for truly unique spaces.</p>
+                    <ul class="service-features">
+                        <li>Custom design</li>
+                        <li>Artisan craftsmanship</li>
+                        <li>Material selection</li>
+                        <li>Made-to-measure</li>
+                        <li>Unique accessories</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="process-section">
+                <div class="section-header">
+                    <h2>Our Design <span class="gradient-text">Process</span></h2>
+                    <p>A streamlined approach to bringing your vision to life</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">💬</div>
+                        <div class="step-title">Consultation</div>
+                        <p class="step-description">We meet to understand your vision, needs, lifestyle, and budget constraints.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">🎨</div>
+                        <div class="step-title">Design Concept</div>
+                        <p class="step-description">Our designers create mood boards, color schemes, and 3D renderings for approval.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">🛍️</div>
+                        <div class="step-title">Sourcing & Procurement</div>
+                        <p class="step-description">We select and order all furniture, materials, and accessories from trusted vendors.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">✅</div>
+                        <div class="step-title">Installation & Styling</div>
+                        <p class="step-description">Professional installation and final styling to perfect every detail of your space.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="color: #525252; font-size: 1.25rem; margin-bottom: 2rem;">Let's create your dream space together</p>
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                    <span>Book Free Consultation</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>LuxeHome</h4>
+                <p>Transform your space into a luxurious haven with our premium home decor and interior styling services.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>123 Design Avenue</li>
+                    <li>New York, NY 10001</li>
+                    <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                    <li><a href="mailto:hello@luxehome.com">hello@luxehome.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LuxeHome Decor & Styling. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+    <script src="js/main.js"></script>
+</body>
+</html>

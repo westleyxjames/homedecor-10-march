@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuxeHome Decor & Styling - Transform your space into a luxurious haven with our premium home decor and interior styling services.">
+    <title>LuxeHome Decor & Styling - Premium Interior Design Services</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='24' cy='24' r='22' fill='%230d9488'/><path d='M24 12L32 18V30H16V18L24 12Z' fill='white'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --teal-50: #f0fdfa;
+            --teal-100: #ccfbf1;
+            --teal-200: #99f6e4;
+            --teal-300: #5eead4;
+            --teal-400: #2dd4bf;
+            --teal-500: #14b8a6;
+            --teal-600: #0d9488;
+            --teal-700: #0f766e;
+            --teal-800: #115e59;
+            --cyan-500: #06b6d4;
+            --cyan-600: #0891b2;
+            --amber-400: #fbbf24;
+            --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --amber-700: #b45309;
+            --neutral-50: #fafafa;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #e5e5e5;
+            --neutral-300: #d4d4d4;
+            --neutral-400: #a3a3a3;
+            --neutral-500: #737373;
+            --neutral-600: #525252;
+            --neutral-700: #404040;
+            --neutral-800: #262626;
+            --neutral-900: #171717;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--neutral-900);
+            background: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: inline-block;
+            vertical-align: middle;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icon-sm {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .icon-lg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .icon-xl {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--teal-600), var(--teal-500), var(--cyan-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-tagline {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--neutral-500);
+            font-weight: 500;
+            margin-top: -0.25rem;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            color: var(--neutral-700);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--teal-600);
+        }
+
+        .nav-link.active {
+            color: var(--teal-600);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0.375rem;
+            height: 0.375rem;
+            background: var(--teal-600);
+            border-radius: 50%;
+        }
+
+        .header-cta {
+            display: flex;
+        }
+
+        .cta-button {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-600), var(--cyan-600));
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(13, 148, 136, 0.3);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--teal-600), var(--cyan-600), var(--teal-700));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            width: 2.5rem;
+            height: 2.5rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            color: var(--neutral-700);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--neutral-100);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid var(--neutral-200);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: var(--neutral-700);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover,
+        .mobile-nav-link.active {
+            background: var(--teal-50);
+            color: var(--teal-600);
+        }
+
+        .mobile-nav-link-cta {
+            margin-top: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            background: linear-gradient(135deg, var(--teal-500), var(--cyan-600));
+            color: white;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        #main-content {
+            padding-top: 80px;
+        }
+
+        .page {
+            display: none;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero-section, .page-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .page-hero {
+            min-height: 50vh;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--teal-50), white, var(--neutral-50));
+        }
+
+        .radial-gradient-1 {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(20, 184, 166, 0.1), transparent 50%);
+        }
+
+        .radial-gradient-2 {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 80%, rgba(13, 148, 136, 0.08), transparent 50%);
+        }
+
+        .floating-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            top: 5rem;
+            left: 2.5rem;
+            width: 5rem;
+            height: 5rem;
+            background: rgba(153, 246, 228, 0.3);
+        }
+
+        .blob-2 {
+            bottom: 5rem;
+            right: 2.5rem;
+            width: 8rem;
+            height: 8rem;
+            background: rgba(45, 212, 191, 0.2);
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(20px, 30px); }
+            50% { transform: translate(0, 40px); }
+            75% { transform: translate(-20px, 20px); }
+        }
+
+        .hero-content, .page-hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .page-hero-content {
+            padding: 6rem 2rem 4rem;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--neutral-600);
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--teal-600), var(--teal-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 8rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: 1rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--neutral-800);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            color: var(--neutral-700);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            color: var(--neutral-700);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-section strong {
+            color: var(--neutral-900);
+            font-weight: 600;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--neutral-200);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--teal-300);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--neutral-900);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--teal-600);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--neutral-700);
+            line-height: 1.8;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.4);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--neutral-900), var(--neutral-800));
+            color: var(--neutral-300);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--neutral-400);
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--teal-400);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--neutral-500);
+            font-size: 0.875rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(13, 148, 136, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 15px 40px rgba(13, 148, 136, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            background: white;
+            color: var(--teal-600);
+            font-weight: 500;
+            border: 2px solid var(--neutral-200);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--teal-500);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav,
+            .header-cta {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .content-container {
+                padding: 3rem 1.5rem 6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <a href="#home" class="logo-link" data-nav="home">
+                <div class="logo">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="22" stroke="url(#logoGradient)" stroke-width="2" fill="none" opacity="0.5"/>
+                        <path d="M24 12L32 18V30H16V18L24 12Z" fill="url(#logoGradient)"/>
+                        <rect x="21" y="24" width="6" height="6" fill="white" rx="1"/>
+                        <circle cx="19" cy="21" r="1.5" fill="white" opacity="0.8"/>
+                        <circle cx="29" cy="21" r="1.5" fill="white" opacity="0.8"/>
+                        <path d="M14 33H34" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0d9488"/>
+                                <stop offset="50%" stop-color="#14b8a6"/>
+                                <stop offset="100%" stop-color="#2dd4bf"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">LuxeHome</span>
+                        <span class="logo-tagline">Decor & Styling</span>
+                    </div>
+                </div>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link active" data-nav="home">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span>Home</span>
+                </a>
+                <a href="#services" class="nav-link" data-nav="services">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"></path></svg>
+                    <span>Services</span>
+                </a>
+                <a href="#about" class="nav-link" data-nav="about">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                    <span>About</span>
+                </a>
+                <a href="#faq" class="nav-link" data-nav="faq">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <span>FAQ</span>
+                </a>
+            </nav>
+
+            <div class="header-cta">
+                <a href="#contact" class="cta-button" data-nav="contact">
+                    <span>Get Started</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <svg class="icon icon-lg" id="menu-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home" class="mobile-nav-link active" data-nav="home">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+            </a>
+            <a href="#services" class="mobile-nav-link" data-nav="services">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"></path></svg>
+                <span>Services</span>
+            </a>
+            <a href="#about" class="mobile-nav-link" data-nav="about">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                <span>About</span>
+            </a>
+            <a href="#faq" class="mobile-nav-link" data-nav="faq">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                <span>FAQ</span>
+            </a>
+            <a href="#contact" class="mobile-nav-link-cta" data-nav="contact">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <div class="hero-section">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="floating-blob blob-1"></div>
+                <div class="floating-blob blob-2"></div>
+
+                <div class="hero-content">
+                    <h1 class="page-title">
+                        Elevate Your <span class="gradient-text">Living Experience</span>
+                    </h1>
+                    <p class="page-subtitle" style="margin-bottom: 2rem;">
+                        Where luxury meets comfort. We craft timeless interiors that reflect your unique style and elevate everyday living.
+                    </p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn-primary" data-nav="contact">
+                            <span>Start Your Project</span>
+                            <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#services" class="btn-secondary" data-nav="services">
+                            <span>Explore Services</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES PAGE -->
+        <section id="services" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">
+                        Our <span class="gradient-text">Premium</span> Services
+                    </h1>
+                    <p class="page-subtitle">
+                        From concept to completion, we offer comprehensive design solutions that transform your space into a reflection of your unique style and personality.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>🏠 Complete Home Styling</h2>
+                    <p>End-to-end interior design solutions for your entire home. We handle everything from concept development to final installation, ensuring a cohesive and stunning result throughout every room.</p>
+                    <ul>
+                        <li>Space Planning</li>
+                        <li>Color Scheme Design</li>
+                        <li>Furniture Selection</li>
+                        <li>Complete Installation</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2>✨ Modern & Luxury Decor</h2>
+                    <p>Contemporary design meets timeless elegance. We curate modern luxury pieces that create sophisticated spaces with clean lines, premium materials, and artistic flair.</p>
+                    <ul>
+                        <li>Designer Pieces</li>
+                        <li>Premium Materials</li>
+                        <li>Custom Accents</li>
+                        <li>Statement Furniture</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2>🎨 Space Planning & Color Consultation</h2>
+                    <p>Expert guidance on optimizing your space and selecting the perfect color palette. Our designers analyze flow, functionality, and aesthetics to maximize your home's potential.</p>
+                    <ul>
+                        <li>Layout Optimization</li>
+                        <li>Color Psychology</li>
+                        <li>Lighting Analysis</li>
+                        <li>Flow Planning</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>🛋️ Furniture Selection & Placement</h2>
+                    <p>Carefully curated furniture that balances style, comfort, and functionality. We source premium pieces and arrange them to create perfect harmony in your space.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>💡 Lighting Design</h2>
+                    <p>Transform spaces with strategic lighting solutions. From ambient to task lighting, we create layered illumination that enhances mood and functionality.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>🖼️ Wall Texture & Artwork</h2>
+                    <p>Elevate your walls with stunning textures and carefully selected artwork. We create focal points that reflect your personality and complete your design vision.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>🛏️ Bedroom Styling</h2>
+                    <p>Create your perfect sanctuary with our bedroom design expertise. We blend comfort with style to design restful retreats that reflect your personal taste.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>🍽️ Kitchen & Dining Decor</h2>
+                    <p>Make your kitchen and dining areas the heart of your home. We combine functionality with beautiful design for spaces that are both practical and inviting.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>📦 Custom Furniture & Accessories</h2>
+                    <p>Bespoke furniture and unique accessories crafted to your specifications. Our custom pieces ensure your space is truly one-of-a-kind and perfectly suited to your needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">
+                        About <span class="gradient-text">LuxeHome</span>
+                    </h1>
+                    <p class="page-subtitle">
+                        Crafting beautiful, functional spaces for over 20 years
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2004, LuxeHome Decor & Styling has been at the forefront of residential interior design. What started as a passion project by our founder, acclaimed designer Elena Martinez, has grown into a full-service design studio serving clients across the nation.</p>
+                    <p>We believe that great design should be accessible to everyone. Our mission is to create spaces that not only look beautiful but also enhance the way you live, work, and relax at home.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li><strong>❤️ Passion:</strong> We love what we do and it shows in every project we undertake.</li>
+                        <li><strong>🏆 Excellence:</strong> We strive for perfection in every detail, from concept to completion.</li>
+                        <li><strong>🤝 Collaboration:</strong> We work closely with clients to bring their unique vision to life.</li>
+                        <li><strong>✨ Innovation:</strong> We stay ahead of trends while honoring timeless design principles.</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Why Choose Us?</h2>
+                    <ul>
+                        <li>✓ Premium Quality Materials</li>
+                        <li>✓ 20+ Years of Experience</li>
+                        <li>✓ Personalized Design Consultation</li>
+                        <li>✓ On-Time Project Delivery</li>
+                        <li>✓ Affordable Luxury Pricing</li>
+                        <li>✓ 100% Satisfaction Guarantee</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">
+                        Get In <span class="gradient-text">Touch</span>
+                    </h1>
+                    <p class="page-subtitle">
+                        Ready to transform your space? Let's start the conversation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>📍 Contact Information</h2>
+                    <p><strong>Address:</strong> 123 Design Avenue, New York, NY 10001</p>
+                    <p><strong>Phone:</strong> <a href="tel:+15551234567" style="color: var(--teal-600);">+1 (555) 123-4567</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:hello@luxehome.com" style="color: var(--teal-600);">hello@luxehome.com</a></p>
+                    <p><strong>Business Hours:</strong></p>
+                    <ul>
+                        <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+                        <li>Saturday: 10:00 AM - 4:00 PM</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h2>✉️ Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <form id="contact-form" style="max-width: 600px;">
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Name</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--neutral-200); border-radius: 0.5rem; font-family: inherit;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+                            <input type="email" name="email" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--neutral-200); border-radius: 0.5rem; font-family: inherit;">
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+                            <textarea name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 2px solid var(--neutral-200); border-radius: 0.5rem; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; display: flex;">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                    <div id="form-success" style="display: none; margin-top: 1rem; padding: 1rem; background: #d1fae5; border: 1px solid #6ee7b7; border-radius: 0.5rem; color: #065f46;">
+                        ✓ Thank you! We'll get back to you within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ PAGE -->
+        <section id="faq" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">
+                        Frequently Asked <span class="gradient-text">Questions</span>
+                    </h1>
+                    <p class="page-subtitle">
+                        Find answers to common questions about our services
+                    </p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What services do you offer?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer complete home styling, modern & luxury decor, space planning, color consultation, furniture selection, lighting design, wall art curation, bedroom styling, kitchen & dining decor, and custom furniture design.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical project take?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Project timelines vary based on scope. A single room can take 2-4 weeks, while complete home styling typically takes 2-3 months from consultation to final installation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your pricing structure?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer flexible pricing based on project scope. Initial consultations are free, and we provide detailed quotes after understanding your needs and budget.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work with existing furniture?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! We can incorporate your existing pieces into the new design or help you select new furniture that complements what you already have.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We primarily serve the New York metropolitan area, but we also take on select projects nationwide. Contact us to discuss your location.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer virtual consultations?</span>
+                        <svg class="icon faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We offer virtual consultations for clients who prefer remote services or are located outside our primary service area.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIVACY POLICY PAGE -->
+        <section id="privacy" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">Privacy Policy</h1>
+                    <p class="page-subtitle">Last Updated: January 22, 2026</p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>1. Introduction</h2>
+                    <p>At LuxeHome Decor & Styling ("we," "our," or "us"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>2. Information We Collect</h2>
+                    <p>We collect information that you provide directly to us, including:</p>
+                    <ul>
+                        <li>Personal identification information (name, email address, phone number, mailing address)</li>
+                        <li>Project details and design preferences</li>
+                        <li>Payment information (processed securely through third-party payment processors)</li>
+                        <li>Communication preferences and correspondence</li>
+                        <li>Photos of your space (when provided for project planning)</li>
+                        <li>Feedback, reviews, and testimonials</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our services</li>
+                        <li>Process your projects and transactions</li>
+                        <li>Communicate with you about your project, appointments, and service updates</li>
+                        <li>Send you marketing communications (with your consent)</li>
+                        <li>Respond to your inquiries and provide customer support</li>
+                        <li>Comply with legal obligations and protect our legal rights</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>4. Data Security</h2>
+                    <p>We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>5. Your Privacy Rights</h2>
+                    <p>You have the right to access, correct, delete, or request restriction of your personal information. Contact us at privacy@luxehome.com for any privacy-related requests.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>6. Contact Us</h2>
+                    <p>For questions about this Privacy Policy:</p>
+                    <ul>
+                        <li>Email: privacy@luxehome.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Address: 123 Design Avenue, New York, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMS & CONDITIONS PAGE -->
+        <section id="terms" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">Terms & Conditions</h1>
+                    <p class="page-subtitle">Last Updated: January 22, 2026</p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>1. Agreement to Terms</h2>
+                    <p>By accessing and using LuxeHome Decor & Styling's website and services, you agree to be bound by these Terms and Conditions.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>2. Services Description</h2>
+                    <p>LuxeHome provides interior design and home decor services, including design consultations, furniture selection, color consultation, custom furniture design, and complete home styling.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>3. Payment Terms</h2>
+                    <ul>
+                        <li>Initial consultation fees are due at time of booking</li>
+                        <li>Design fees are typically 50% upfront, 50% upon completion</li>
+                        <li>Product purchases require payment before ordering</li>
+                        <li>We accept credit cards, checks, and bank transfers</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>4. Intellectual Property</h2>
+                    <p>All design concepts, drawings, and materials created by LuxeHome remain our intellectual property. Clients receive a license to use designs for their intended project only.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>5. Limitation of Liability</h2>
+                    <p>LuxeHome's liability is limited to the amount paid for our services. We are not liable for indirect, incidental, or consequential damages.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>6. Contact Information</h2>
+                    <p>For questions about these Terms:</p>
+                    <ul>
+                        <li>Email: legal@luxehome.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFUND POLICY PAGE -->
+        <section id="refund" class="page">
+            <div class="page-hero">
+                <div class="hero-bg">
+                    <div class="radial-gradient-1"></div>
+                    <div class="radial-gradient-2"></div>
+                </div>
+                <div class="page-hero-content">
+                    <h1 class="page-title">Refund Policy</h1>
+                    <p class="page-subtitle">Last Updated: January 22, 2026</p>
+                </div>
+            </div>
+            
+            <div class="content-container">
+                <div class="content-section">
+                    <h2>1. General Policy</h2>
+                    <p>At LuxeHome Decor & Styling, we strive for complete client satisfaction. This Refund Policy outlines our commitment to fair and transparent refund practices.</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>2. Design Services Refunds</h2>
+                    <h3>Consultation Fees</h3>
+                    <ul>
+                        <li>Free initial consultations are non-refundable (as they are complimentary)</li>
+                        <li>Paid consultation fees are refundable within 24 hours of booking</li>
+                        <li>No refunds after the consultation has been conducted</li>
+                    </ul>
+
+                    <h3>Design Development</h3>
+                    <ul>
+                        <li>50% refund available if canceled before initial concepts are presented</li>
+                        <li>25% refund if canceled after first presentation but before revisions</li>
+                        <li>No refund once final designs are delivered</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>3. Product Purchase Refunds</h2>
+                    <ul>
+                        <li>Custom-ordered items are non-refundable once manufacturing begins</li>
+                        <li>Stock items may be returned within 14 days of delivery</li>
+                        <li>Items must be in original condition with all tags and packaging</li>
+                        <li>Restocking fee of 15% may apply</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>4. Refund Process</h2>
+                    <p>To request a refund:</p>
+                    <ol>
+                        <li>Contact us at refunds@luxehome.com or call +1 (555) 123-4567</li>
+                        <li>Provide your order/project number and reason for refund</li>
+                        <li>Wait for our team to review (2-3 business days)</li>
+                        <li>Approved refunds processed within 5-7 business days</li>
+                    </ol>
+                </div>
+
+                <div class="content-section">
+                    <h2>5. Contact Us</h2>
+                    <p>For refund requests:</p>
+                    <ul>
+                        <li>Email: refunds@luxehome.com</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>Hours: Monday-Friday, 9 AM - 6 PM EST</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>LuxeHome</h4>
+                    <p style="color: var(--neutral-400); margin-bottom: 1rem;">Transform your space into a luxurious haven with our premium home decor and interior styling services.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about" data-nav="about">About Us</a></li>
+                        <li><a href="#services" data-nav="services">Services</a></li>
+                        <li><a href="#contact" data-nav="contact">Contact</a></li>
+                        <li><a href="#faq" data-nav="faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy" data-nav="privacy">Privacy Policy</a></li>
+                        <li><a href="#terms" data-nav="terms">Terms & Conditions</a></li>
+                        <li><a href="#refund" data-nav="refund">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: var(--neutral-400);">123 Design Avenue</li>
+                        <li style="color: var(--neutral-400);">New York, NY 10001</li>
+                        <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                        <li><a href="mailto:hello@luxehome.com">hello@luxehome.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 LuxeHome Decor & Styling. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <script>
+        // Navigation System
+        const navLinks = document.querySelectorAll('[data-nav]');
+        const pages = document.querySelectorAll('.page');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-nav');
+                navigateToPage(target);
+                closeMobileMenu();
+            });
+        });
+        
+        function navigateToPage(pageId) {
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.history.pushState(null, '', '#' + pageId);
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-nav') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        }
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        mobileToggle.addEventListener('click', () => {
+            const isActive = mobileMenu.classList.toggle('active');
+            
+            if (isActive) {
+                menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+            } else {
+                menuIcon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+            }
+        });
+        
+        function closeMobileMenu() {
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuIcon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
+            }
+        }
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Contact form
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const success = document.getElementById('form-success');
+                success.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => {
+                    success.style.display = 'none';
+                }, 5000);
+            });
+        }
+        
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Handle hash navigation on load
+        const hash = window.location.hash.substring(1);
+        if (hash && hash !== 'home') {
+            navigateToPage(hash);
+        }
+        
+        // Handle browser back/forward
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1);
+            const pageId = hash || 'home';
+            navigateToPage(pageId);
+        });
+    </script>
+</body>
+</html>
